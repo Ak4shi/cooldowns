@@ -29,9 +29,7 @@ class utils:
     return sec
 
   def roundcd(seconds):
-    print(seconds)
     sec = utils.getsecs()
-    print(sec)
     if int(sec) > int(seconds):
       return
     sec = int(seconds) - int(sec)
@@ -119,6 +117,8 @@ def getcd(ctx):
       print(sec)
       return int(sec)
 
+
+
 def cooldown(ctx):
   cdkeys = getkeys()
   try:
@@ -130,4 +130,11 @@ def cooldown(ctx):
       return False
   except KeyError:
     return False
+
+def checkcd(ctx):
+  if cooldown(ctx):
+      left = cooldowns.getcd(ctx)
+      left = cooldowns.utils.roundcd(left)
+      await ctx.send(f"Cannot use command `{left}` left")
+      return True
 
