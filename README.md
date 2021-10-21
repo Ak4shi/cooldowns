@@ -78,3 +78,6 @@ cooldown - check/reset for cooldown
 checkcd - function to check for cooldown and send how much time is left in channel
 
 ```
+
+### how is it better?
+this cooldown saves even if the bot shuts down and does this using a key system. Is easier to use and can be reset easily with multiple commands. You can use json to edit the key storage and add your own cooldowns manually as well as being more flexable
