@@ -131,7 +131,7 @@ def cooldown(ctx):
   except KeyError:
     return False
 
-def checkcd(ctx):
+async def checkcd(ctx):
   if cooldown(ctx):
       left = cooldowns.getcd(ctx)
       left = cooldowns.utils.roundcd(left)
